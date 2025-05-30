@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects & Experiencess</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="section home-section">
+    <div class="home-image fade-element" data-parallax>
+      <img src="images/profile.png" alt="Home Image" />
+    </div>
+    <div class="home-content fade-element" data-parallax>
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hi, I'm Zander Luntayao, a passionate <b>General Virtual Assistant</b>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="parallax section">
+    <h1 class="fade-element" data-parallax>About Me</h1>
+    <p class="fade-element paragraph" data-parallax>
+      Hi there! I'm a <strong>dedicated</strong> and <strong>detail-oriented</strong>
+      <span class="highlight">General Virtual Assistant</span> with a passion for helping busy entrepreneurs and business owners stay <strong>organized</strong> and <strong>efficient</strong>. With a strong background in <span class="highlight">admin support</span>, <span class="highlight">customer service</span>, and <span class="highlight">time management</span>, I take pride in making sure the back end of your business runs smoothly — so you can focus on what matters most.
+    </p>
+    <p class="fade-element paragraph" data-parallax>
+      Over the years, I’ve assisted clients with tasks ranging from <strong>email management</strong> and <strong>calendar coordination</strong> to <strong>research</strong>, <strong>data entry</strong>, and <strong>client follow-ups</strong>. I’m a <span class="highlight">quick learner</span>, <strong>tech-savvy</strong>, and I thrive in <span class="highlight">fast-paced, remote environments</span>.
+    </p>
+    <p class="fade-element paragraph" data-parallax>
+      My goal is simple: <strong>to make your life easier</strong> by being the <span class="highlight">reliable right-hand</span> you didn’t know you needed. I bring <strong>professionalism</strong>, <strong>clear communication</strong>, and a <strong>positive attitude</strong> to every project — whether it’s a one-time task or ongoing support.
+    </p>
+    <p class="fade-element paragraph" data-parallax>
+      When I’m not working, you’ll probably find me <span class="highlight">organizing my digital life</span> (yes, I’m that person), <strong>learning new tools</strong>, or enjoying a good playlist while checking things off a to-do list.
+    </p>
+    <p class="fade-element paragraph final" data-parallax>
+      <strong>Let’s team up and get things done.</strong>
+    </p>
+    <img class="fade-element" src="about-image.jpg" alt="About Image" data-parallax />
+  </section>
+
+  <section id="projects" class="section">
+    <h1 class="fade-element" data-parallax>My Projects & Work Experiences</h1>
+    <div class="grid-container fade-element" data-parallax>
+      <div class="grid-item">
+        <img src="images/csr.jpg" alt="Project 1" />
+        <p><strong>Client Service Representative (CSR)</strong><br>
+In this role, I provided front-line support to customers by handling inquiries, resolving complaints, and delivering top-notch service through phone, chat, and email. I consistently met performance targets and helped improve customer satisfaction through clear communication, active listening, and problem-solving. This experience sharpened my ability to remain calm under pressure and provide efficient, empathetic assistance in fast-paced environments.</p>
+
+      </div>
+      <div class="grid-item">
+        <img src="images/webdev.jpg" alt="Project 2" />
+        <p><strong>Website Developer</strong><br>
+As a Website Developer, I designed and built responsive, user-friendly websites tailored to client needs. From layout and navigation to integrating contact forms and optimizing for speed and SEO, I ensured every site was both functional and visually engaging. I worked with HTML, CSS, and JavaScript to deliver
+
+      </div>
+      <div class="grid-item">
+        <img src="images/emailmanagement.jpg" alt="Project 3" />
+        <p><strong>Email Management</strong><br>
+In this role, I streamlined and organized client inboxes to ensure no message went unnoticed. I handled daily email triage, flagged high-priority items, responded to routine inquiries, and set up filters and labels for optimal workflow. My goal was always to maintain a clean, efficient inbox that helped clients stay focused on their core business. With a keen eye for detail and strong communication skills, I ensured timely, professional correspondence at all times.</p>
+
+      </div>
+      <div class="grid-item">
+        <img src="images/coldcaller.jpg" alt="Project 4" />
+        <p><strong>Cold Caller — Payment Arrangement Specialist</strong><br>
+As a Cold Caller, I reached out to customers with outstanding debts to discuss their financial situations and offer manageable payment solutions. I approached each call with empathy and professionalism, aiming to build trust and encourage open communication. I successfully negotiated payment plans that aligned with both company policies and the client’s ability to pay, helping reduce delinquency while maintaining positive customer relationships.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h1 class="fade-element" data-parallax>Contact Me</h1>
+    <p class="fade-element" data-parallax>Email: zanderzander125@gmail.com</p>
+    <p class="fade-element" data-parallax>Phone Number: +639278669633</p>
+    <p class="fade-element" data-parallax>Facebook: <a href="https://www.facebook.com/zander.dongcoy">https://www.facebook.com/zander.dongcoy </a></p>
+  </section>
+
+  <script>
+    // Show/hide nav on scroll
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function () {
+      const currentScroll = window.pageYOffset;
+      document.body.classList.toggle("hide-nav", currentScroll > lastScrollTop);
+      lastScrollTop = currentScroll;
+    });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Fade-in scroll animation
+    const faders = document.querySelectorAll(".fade-element");
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("fade-in");
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach((el) => {
+      appearOnScroll.observe(el);
+    });
+  </script>
+</body>
+</html>
